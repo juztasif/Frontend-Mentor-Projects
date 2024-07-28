@@ -1,0 +1,117 @@
+:root{
+ /* Primary */
+    --very-dark-blue: hsl(233, 47%, 7%); /* main background */
+    --dark-destaurated-blue: hsl(244, 38%, 16%); /* card background */
+    --soft-violet: hsl(277, 64%, 61%); /* accent */
+    --soft-violet-transparent: hsla(277, 64%, 61%, 0.5); /* accent */
+
+ /* Neutral */
+    --white: hsl(0, 0%, 100%); /* main heading, stats */
+    --transparent-white-75: hsla(0, 0%, 100%, 0.75); /* main paragraph */
+    --transparent-white-60: hsla(0, 0%, 100%, 0.6); /* state headings */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter",sans-serif;
+    color: white;
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+.colored-text {
+    color: var(--soft-violet);
+}
+.card {
+    background-color: var(--dark-destaurated-blue);
+    display: flex;
+    margin: 50px;
+    max-width: 1080px;
+    gap: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img {
+    position: relative;
+    content: "";
+    order: 1;
+    width: 50%;
+    height: auto ;
+}
+
+.card-img img{
+    width: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+}
+.card-img::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--soft-violet-transparent);
+    top: 0;
+    left: 0;
+}
+.card-text {
+    padding: 60px;
+    height: auto;
+    width: 50%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    position: relative;
+}
+.card-text>p {
+    color: var(--transparent-white-75);
+}
+
+.info-card {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.info-item>h2{
+    color: var(--white);
+}
+.info-item>p {
+    font-family: "Lexend Deca",sans-serif;
+    text-transform: uppercase;
+    color: var(--transparent-white-60);
+}
+
+@media (max-width: 970px) {
+    .attribution { display: none; }
+    .card {
+        margin: 20px;
+        flex-direction: column;
+        max-width: 600px;
+        gap: 0;
+    }
+    .card>*{
+        text-align: center;
+        width: 100%;
+    }
+    .card-img {
+        order: 0;
+    }
+    .card-img>img {
+        overflow: hidden;
+        src: url(./images/image-header-mobile.jpg);
+    }
+    .card-img::after {
+        height: 99.2%;
+    }
+    .info-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

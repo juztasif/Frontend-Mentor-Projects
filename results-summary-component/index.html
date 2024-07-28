@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      font-family: "Hanken Grotesk", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .card {
+      margin:20px;
+      width: 70vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 10px 10px 20px hsl(221, 100%, 96%);
+      border-radius: 20px;
+    }
+
+    /* left card styling */
+    .card-l>* {
+      color: white;
+    }
+
+    .card-l {
+      border-radius: 20px;
+      background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .circle>p {
+
+      color: hsl(241, 100%, 89%);
+    }
+
+    .card-l>b,
+    .card-l>p {
+      text-align: center;
+      color: hsl(241, 100%, 89%);
+      margin: 0 20px;
+    }
+
+    .circle {
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      background: linear-gradient(to top, hsla(241, 72%, 46%, 0), hsla(256, 72%, 46%, 1));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .result {
+      font-size: 50px;
+      font-weight: bolder;
+    }
+
+
+    .card-r {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+      width: 50%;
+      padding: 40px 20px;
+    }
+
+    .card-r>b {
+      color: black;
+    }
+
+    .item-deck {
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .item {
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .item-1 {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: hsla(0, 100%, 67%, 0.1);
+    }
+
+    .item-1>.item-left>p {
+      color: hsl(0, 100%, 67%);
+    }
+
+    .item-2 {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: hsl(39, 100%, 56%, 0.1);
+    }
+
+    .item-2>.item-left>p {
+      color: hsl(39, 100%, 56%);
+    }
+
+    .item-3 {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: hsl(166, 100%, 37%, 0.1);
+    }
+
+    .item-3>.item-left>p {
+      color: hsl(166, 100%, 37%);
+    }
+
+    .item-4 {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: hsl(234, 85%, 45%, 0.1);
+    }
+
+    .item-4>.item-left>p {
+      color: hsl(234, 85%, 45%);
+    }
+
+    .card-r>p {
+      color: black;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+    }
+    .item-left {
+      display: flex;
+      gap: 10px;
+    }
+    .item-right {
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      width: 200px;
+      padding: 10px;
+      background-color:hsl(224, 30%, 27%);
+      color: white;
+      font-weight: bolder;
+      border-radius: 25px;
+    }
+
+    .card-r, .item-deck, .item, button {
+      width: 100%;
+    }
+
+    .l00{
+      color: hsla(224, 30%, 27%, 0.527);
+      font-size: 16px;
+    }
+
+    @media (max-width: 550px) {
+      body {
+        height: auto;
+      }
+      .card {
+        height: auto;
+	margin: 0;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+      }
+      button {
+        margin: 20px 0;
+      }     
+      .item {
+        margin: 10px 0;
+      }
+      .card-l{
+        border-radius: 0 0 25px 40px;
+      }
+      .attribution { visibility: hidden; }
+    }
+    .title {
+      font-size: 25px;
+    }
+    /*     
+- White: hsl(0, 0%, 100%)
+- Pale blue: hsl(221, 100%, 96%)
+- Light lavender: hsl(241, 100%, 89%)
+- Dark gray blue: hsl(224, 30%, 27%) */
+  </style>
+</head>
+
+<body>
+
+
+  <section class="card">
+
+      <div class="card-l">
+
+        <p class="title">Your Result</p>
+
+        <div class="circle">
+          <div class="result">76</div>
+          <p>of 100</p>
+        </div>
+        
+        <h2>Great</h2>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+
+
+    <div class="card-r">
+      
+      <p class="title">Summary</p>
+      
+      <div class="item-deck">
+      
+        <div class="item item-1">
+          <div class="item-left">
+            <img src="./assets/images/icon-reaction.svg"></img>
+            <p>Reaction</p>
+          </div>
+          <div class="item-right"><p>80</p> <p class="l00"> &ensp;/ 100</p></div>
+        </div>
+      
+        <div class="item item-2">
+          <div class="item-left">
+            <img src="./assets/images/icon-memory.svg"></img>
+            <p>Memory</p>
+          </div>
+          <div class="item-right"><p>92</p> <p class="l00"> &ensp;/ 100</p></div>
+        </div>
+      
+        <div class="item item-3">
+          <div class="item-left">
+            <img src="./assets/images/icon-verbal.svg"></img>
+            <p>Verbal</p>
+          </div>
+          <div class="item-right"><p>61</p> <p class="l00"> &ensp;/ 100</p></div>
+        </div>
+
+        <div class="item item-4">
+          <div class="item-left">
+            <img src="./assets/images/icon-visual.svg"></img>
+            <p>Visual</p>
+          </div>
+          <div class="item-right"><p>72 </p> <p class="l00"> &ensp;/ 100</p></div>
+        </div>
+
+      </div>
+
+      <button>
+        Continue
+      </button>
+    </div>
+
+  </section>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Spych</a>.
+  </div>
+</body>
+
+</html>

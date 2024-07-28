@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{
+/* Primary Colors */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+/* Neutral COlors */
+    --dark-blue-mainbg: hsl(217, 54%, 11%);
+    --dark-blue-cardbg: hsl(216, 50%, 16%);
+    -dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+    background-color: var(--dark-blue-mainbg);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+p {
+    color: var(--soft-blue);
+}
+
+b {
+    color: var(--cyan);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    gap: 20px;
+    border-radius: 15px;
+    background-color: var(--dark-blue-cardbg);
+    height: max-content;
+    width: 350px;
+}
+
+.container {
+    position: relative; 
+    width: auto;
+}
+
+.card-img {
+    display: block; 
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-icon {
+    background-color: rgba(0, 255, 255, 0.7);
+    border-radius: 8px;
+    padding: 125px;
+    visibility: hidden;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    pointer-events: none; 
+}
+
+.card-title,.profile-name {
+    color: var(--white);
+}
+
+.card-title:hover,.profile-name:hover {
+    color: var(--cyan);
+    pointer-events: auto;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price,.days-left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+hr {
+    height: 1px;
+    border: none;
+    background-color:var(--soft-blue);
+}
+
+
+.profile-img {
+    height: 40px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.container:hover .card-icon {
+    visibility: visible;
+}
+
+
+
