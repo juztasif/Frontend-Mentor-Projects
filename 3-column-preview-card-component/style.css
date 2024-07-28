@@ -1,0 +1,130 @@
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Big Shoulders Display", sans-serif;
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  font-weight: 400;
+  font-family: "Lexend Decan", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+
+body {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card {
+  height: 450px;
+  margin: 0;
+  max-width: 285px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-link {
+  margin-top: auto;
+}
+
+.card-link > a {
+  font-weight: 400;
+  font-family: "Lexend Decan", sans-serif;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: white;
+  text-decoration: none;
+}
+
+.card:nth-child(1) {
+  background-color: var(--bright-orange);
+}
+.card:nth-child(1) .card-logo {
+  content: url(./images/icon-sedans.svg);
+}
+.card:nth-child(1) a {
+  color: var(--bright-orange);
+}
+
+.card:nth-child(2) {
+  background-color: var(--dark-cyan);
+}
+.card:nth-child(2) .card-logo {
+  content: url(./images/icon-suvs.svg);
+}
+.card:nth-child(2) a {
+  color: var(--dark-cyan);
+}
+
+.card:nth-child(3) {
+  background-color: var(--very-dark-cyan);
+}
+.card:nth-child(3) .card-logo {
+  content: url(./images/icon-luxury.svg);
+}
+.card:nth-child(3) a {
+  color: var(--very-dark-cyan);
+}
+
+.card-link > a:hover {
+  border: solid 1px white;
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .container {
+    margin: 40;
+    flex-direction: column;
+    width: 60%;
+  }
+  .card {
+    height: auto;
+    max-width: 100%;
+  }
+  body {
+    width: 100%;
+    height: auto;
+  }
+  .card-link {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    margin: 10;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
