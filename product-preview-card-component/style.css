@@ -119,6 +119,10 @@ div + .product-info {
 }
 
 .add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: none;
   border-radius: 10px;
   height: 3rem;
