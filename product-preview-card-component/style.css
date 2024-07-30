@@ -1,0 +1,133 @@
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: none;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-greyish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+@media (max-width: 650px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  color: var(--dark-greyish-blue);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+}
+
+div + .product-info {
+  width: 300px;
+}
+@media (max-width: 650px) {
+  div + .product-info {
+    width: 350px;
+  }
+}
+
+.product-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  width: 600px;
+  margin: 20px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 650px) {
+  .product-card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.product-image {
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 650px) {
+  .product-image {
+    content: url("./images/image-product-mobile.jpg");
+  }
+}
+.product-info {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
+@media (max-width: 650px) {
+  .product-info {
+    width: 380px;
+    gap: 20px;
+  }
+}
+.product-type {
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+.product-name {
+  color: var(--very-dark-blue);
+}
+.product-text {
+  line-height: 1.5rem;
+}
+.product-price-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.product-selling-price {
+  color: var(--dark-cyan);
+}
+.product-market-price {
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  border: none;
+  border-radius: 10px;
+  height: 3rem;
+  width: 100%;
+  color: white;
+  background-color: var(--dark-cyan);
+}
+.add-to-cart:hover {
+  background-color: var(--very-dark-blue);
+}
+
+/*# sourceMappingURL=style.css.map */
